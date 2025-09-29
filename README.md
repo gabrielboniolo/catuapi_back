@@ -1,6 +1,6 @@
 # CatuAPI Backend
 
-API desenvolvida como parte do MVP da disciplina **Desenvolvimento Full Stack Básico (PUC-Rio)**.  
+API desenvolvida como parte do MVP da disciplina **Desenvolvimento Full Stack Básico**.  
 O backend é construído em **Python com Flask**, fornecendo **rotas CRUD para gerenciamento de cafés especiais**, integrando com o frontend da aplicação.
 
 ---
@@ -47,7 +47,6 @@ cd catuapi_back
 Crie e ative um ambiente virtual:
 
 ```bash
-Copiar código
 python -m venv venv
 # Windows
 venv\Scripts\activate
@@ -58,14 +57,12 @@ source venv/bin/activate
 Instale as dependências:
 
 ```bash
-Copiar código
 pip install -r requirements.txt
 ```
 
 Execute a API:
 
 ```bash
-Copiar código
 python app.py
 ```
 
@@ -86,8 +83,6 @@ GET e DELETE retornam JSON com as informações dos cafés.
 
 Documentação interativa disponível em:
 
-arduino
-Copiar código
 http://127.0.0.1:5000/openapi
 Permite testar todas as rotas diretamente pelo navegador.
 
@@ -134,4 +129,4 @@ Swagger permite testes e documentação automáticos sem ferramentas externas
 
 👨‍💻 Autor
 
-Desenvolvido por Gabriel Boniolo como parte do MVP da disciplina Engenharia de Software - PUC-Rio.
+Desenvolvido por Gabriel Boniolo como parte do MVP da disciplina | Engenharia de Software - PUC-Rio.
