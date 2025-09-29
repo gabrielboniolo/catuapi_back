@@ -1,15 +1,19 @@
-from flask import Flask
 from flask_cors import CORS
 from db import db
+from flask_openapi3 import OpenAPI, Info
+from routes import initialize_routes
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///CAFES_ESPECIAIS.db'
-db.init_app(app)
-CORS(app)
+info = Info(title="CatuAPI", version="1.0", description="API de cafés especiais")
 
-from routes import *
+api = OpenAPI(__name__, info=info)
+
+api.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///CAFES_ESPECIAIS.db'
+db.init_app(api)
+CORS(api)
+
+initialize_routes(api)
 
 if __name__ == '__main__':
-    with app.app_context():
+    with api.app_context():
         db.create_all()
-    app.run(debug=True)
+    api.run(debug=True)
