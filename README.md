@@ -109,10 +109,10 @@ sensorial_amargor	Integer	Nota de amargor
 
 🧩 Dependências Principais
 
-flask
-flask-cors
-flask-sqlalchemy
-flask-openapi3[swagger]
+flask, 
+flask-cors, 
+flask-sqlalchemy, 
+flask-openapi3[swagger], 
 pydantic
 
 ⚡ Observações
