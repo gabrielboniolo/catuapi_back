@@ -109,8 +109,6 @@ sensorial_amargor	Integer	Nota de amargor
 
 🧩 Dependências Principais
 
-txt
-Copiar código
 flask
 flask-cors
 flask-sqlalchemy
