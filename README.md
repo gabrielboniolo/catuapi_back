@@ -96,16 +96,17 @@ Arquivo: CAFES_ESPECIAIS.db
 
 Tabela principal: CAFES
 
-Campo	Tipo	Observação
-id	Integer	Primary Key, auto-increment
-nome	String	Nome do café
-produtor	String	Nome do produtor
-variedade	String	Variedade do café
-processo	String	Processo de produção
-sensorial_docura	Integer	Nota de docura
-sensorial_acidez	Integer	Nota de acidez
-sensorial_corpo	Integer	Nota de corpo
-sensorial_amargor	Integer	Nota de amargor
+| Campo | Tipo | Observação |
+|---|---|---|
+| id | Integer | Primary Key, auto-increment |
+| nome | String | Nome do café |
+| produtor | String | Nome do produtor |
+| variedade | String | Variedade do café |
+| processo | String | Processo de produção |
+| sensorial\_docura | Integer | Nota de docura |
+| sensorial\_acidez | Integer | Nota de acidez |
+| sensorial\_corpo | Integer | Nota de corpo |
+| sensorial\_amargor | Integer | Nota de amargor |
 
 🧩 Dependências Principais
 
