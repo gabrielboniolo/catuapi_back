@@ -1,16 +1,16 @@
 from flask import jsonify
 from flask_openapi3 import Tag
 
-from app import db
+from db import db
 from models import Cafes
 from schemas import CafeSchema, CafePath
 
 #APIBlueprint("/cafes", __name__)
 
-def initialize_routes(api):
+def initialize_routes(app):
     cafe_tag = Tag(name="Cafes", description="Operações com cafés")
 
-    @api.get("/catuapi/cafes", tags=[cafe_tag])
+    @app.get("/catuapi/cafes", tags=[cafe_tag])
     def get_cafes():
         """Lista todos os cafés"""
 
@@ -30,7 +30,7 @@ def initialize_routes(api):
             } for cafe in cafes
         ])
 
-    @api.post("/catuapi/cafes", tags=[cafe_tag])
+    @app.post("/catuapi/cafes", tags=[cafe_tag])
     def post_cafes(body: CafeSchema):
         """Adiciona um café"""
 
@@ -50,7 +50,7 @@ def initialize_routes(api):
 
         return {"message": "Café adicionado com sucesso"}, 201
 
-    @api.put("/catuapi/cafes/<int:id>", tags=[cafe_tag])
+    @app.put("/catuapi/cafes/<int:id>", tags=[cafe_tag])
     def put_cafes(path: CafePath, body: CafeSchema):
         """Atualiza um café"""
 
@@ -71,7 +71,7 @@ def initialize_routes(api):
 
         return {"message": "Café atualizado com sucesso"}, 200
 
-    @api.delete("/catuapi/cafes/<int:id>", tags=[cafe_tag])
+    @app.delete("/catuapi/cafes/<int:id>", tags=[cafe_tag])
     def delete_cafes(path: CafePath):
         """Deleta um café"""
 
