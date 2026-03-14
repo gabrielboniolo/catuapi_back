@@ -1,7 +1,10 @@
 from flask_cors import CORS
-from db import db
+from flask_sqlalchemy import SQLAlchemy
 from flask_openapi3 import OpenAPI, Info
+
 from routes import initialize_routes
+
+db = SQLAlchemy()
 
 info = Info(title="CatuAPI", version="1.0", description="API de cafés especiais")
 

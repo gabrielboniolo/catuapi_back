@@ -1,7 +1,8 @@
-from flask_openapi3 import Tag
 from flask import jsonify
+from flask_openapi3 import Tag
+
+from app import db
 from models import Cafes
-from db import db
 from schemas import CafeSchema, CafePath
 
 #APIBlueprint("/cafes", __name__)
@@ -14,7 +15,7 @@ def initialize_routes(api):
         """Lista todos os cafés"""
 
         cafes = Cafes.query.all()
-        
+
         return jsonify([
             {
                 "id": cafe.id,
