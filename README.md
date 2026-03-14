@@ -28,7 +28,7 @@ O **CatuAPI Backend** tem como objetivo fornecer um serviço simples e prático 
 ## 📂 Estrutura do Projeto
 catuapi_back/  
 ```plaintext
-app.py             # Ponto de entrada da API, configuração do Flask e OpenAPI
+main.py             # Ponto de entrada da API, configuração do Flask e OpenAPI
 db.py              # Inicialização do SQLAlchemy
 models.py          # Modelos SQLAlchemy (tabela CAFES)
 schemas.py         # Modelos Pydantic para validação e Swagger
@@ -63,20 +63,20 @@ pip install -r requirements.txt
 Execute a API:
 
 ```bash
-python app.py
+python main.py
 ```
 
 A API estará disponível em: http://127.0.0.1:5000/
 
 🔗 Rotas Disponíveis
 
-Método	Rota	Descrição
-GET	/catuapi/cafes	Lista todos os cafés cadastrados
-POST	/catuapi/cafes	Adiciona um novo café
-PUT	/catuapi/cafes/{id}	Atualiza um café existente pelo ID
-DELETE	/catuapi/cafes/{id}	Remove um café pelo ID
+GET    = "/catuapi/cafes"	   // Lista todos os cafés cadastrados
+POST   = "/catuapi/cafes"	   // Adiciona um novo café
+PUT    = "/catuapi/cafes/{id}" // Atualiza um café existVente pelo ID
+DELETE = "/catuapi/cafes/{id}" // Remove um café pelo ID
 
-POST e PUT usam o modelo Pydantic CafeSchema para validação de dados.
+POST e PUT usam o modelo Pydantic CafeSchema para validação de dados.  
+
 GET e DELETE retornam JSON com as informações dos cafés.
 
 📌 Swagger / OpenAPI
@@ -128,4 +128,4 @@ Swagger permite testes e documentação automáticos sem ferramentas externas
 
 👨‍💻 Autor
 
-Desenvolvido por Gabriel Boniolo como parte do MVP da disciplina | Engenharia de Software - PUC-Rio.
+Desenvolvido por Gabriel Boniolo como parte do MVP da disciplina de Desenvolvimento Full Stack Básico | Engenharia de Software - PUC-Rio.
