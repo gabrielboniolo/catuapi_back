@@ -12,7 +12,9 @@ def initialize_routes(api):
     @api.get("/catuapi/cafes", tags=[cafe_tag])
     def get_cafes():
         """Lista todos os cafés"""
+
         cafes = Cafes.query.all()
+        
         return jsonify([
             {
                 "id": cafe.id,
@@ -30,6 +32,7 @@ def initialize_routes(api):
     @api.post("/catuapi/cafes", tags=[cafe_tag])
     def post_cafes(body: CafeSchema):
         """Adiciona um café"""
+
         novo = Cafes(
             nome=body.nome,
             produtor=body.produtor,
@@ -40,14 +43,18 @@ def initialize_routes(api):
             sensorial_corpo=body.sensorial_corpo,
             sensorial_amargor=body.sensorial_amargor
         )
+
         db.session.add(novo)
         db.session.commit()
+
         return {"message": "Café adicionado com sucesso"}, 201
 
     @api.put("/catuapi/cafes/<int:id>", tags=[cafe_tag])
     def put_cafes(path: CafePath, body: CafeSchema):
         """Atualiza um café"""
+
         cafe = Cafes.query.get(path.id)
+
         if not cafe:
             return {"error": "Café não encontrado"}, 404
         cafe.nome = body.nome
@@ -58,16 +65,21 @@ def initialize_routes(api):
         cafe.sensorial_acidez = body.sensorial_acidez
         cafe.sensorial_corpo = body.sensorial_corpo
         cafe.sensorial_amargor = body.sensorial_amargor
+
         db.session.commit()
+
         return {"message": "Café atualizado com sucesso"}, 200
 
     @api.delete("/catuapi/cafes/<int:id>", tags=[cafe_tag])
     def delete_cafes(path: CafePath):
         """Deleta um café"""
-    
+
+        # Cafes.query.get(path.id)
         cafe = db.session.scalars(db.select(Cafes).where(Cafes.id == path.id)).first()
+
         if not cafe:
             return {"error": "Café não encontrado"}, 404
         db.session.delete(cafe)
         db.session.commit()
+
         return {"message": "Café deletado com sucesso"}, 200
