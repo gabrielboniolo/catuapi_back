@@ -9,3 +9,6 @@ class CafeSchema(BaseModel):
     sensorial_acidez: int = Field(..., description="Acidez")
     sensorial_corpo: int = Field(..., description="Corpo")
     sensorial_amargor: int = Field(..., description="Amargor")
+
+class CafePath(BaseModel):
+    id: int
