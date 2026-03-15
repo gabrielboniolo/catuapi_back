@@ -75,13 +75,13 @@ python main.py
 
 ## Rotas Disponíveis
 
-1. **GET** *"/catuapi/cafes"* (Lista todos os cafés cadastrados)
+1. **GET** *"/catuapi/cafes"* → Lista todos os cafés cadastrados
 
-2. **POST** *"/catuapi/cafes"* (Adiciona um novo café)
+2. **POST** *"/catuapi/cafes"* → Adiciona um novo café
 
-3. **PUT** *"/catuapi/cafes/{id}"* (Atualiza um café existVente pelo ID)
+3. **PUT** *"/catuapi/cafes/{id}"* → Atualiza um café existVente pelo ID
 
-4. **DELETE** *"/catuapi/cafes/{id}"* (Remove um café pelo ID)
+4. **DELETE** *"/catuapi/cafes/{id}"* → Remove um café pelo ID
 
 **POST** e **PUT** usam o modelo Pydantic CafeSchema para validação de dados.  
 
